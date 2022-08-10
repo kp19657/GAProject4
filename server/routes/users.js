@@ -51,6 +51,17 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//get a user for profile view
+router.get("/pfl/:id", async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.params.id });
+    const { password, updatedAt, ...other } = user._doc;
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // get a user
 // router.get("/", async (req, res) => {
 //   const userId = req.query.userId;

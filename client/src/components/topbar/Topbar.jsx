@@ -10,9 +10,11 @@ import { logoutCall } from "../../apiCalls";
 
 export default function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
+  
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const handleClick = () => {
     logoutCall(dispatch);
+    console.log("logout clicked");
   };
 
   return (

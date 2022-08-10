@@ -2,6 +2,7 @@ import "./profile.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
+import Feedprofile from "../../components/feedProfile/Feedprofile";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -15,9 +16,8 @@ export default function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(
-        `http://localhost:5001/api/users/username=${username}`
+        "http://localhost:5001/api/users/pfl/" + username
       );
-      console.log(res);
       setUser(res.data);
     };
     fetchUser();
@@ -53,20 +53,22 @@ export default function Profile() {
               <img
                 className="profileUserImg"
                 src={
-                  PF + `person/${user.profilePicture}` ||
-                  PF + "person/noAvatar.jpg"
+                  user.profilePicture
+                    ? PF + `person/${user.profilePicture}`
+                    : PF + "person/noAvatar.png"
                 }
                 alt=""
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
-              <span className="profileInfoDesc">{user.desc}</span>
+              <h4 className="profileInfoName">
+                {user.username ? user.username : "user not found"}
+              </h4>
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username={username} />
-            <Rightbar user={user} />
+            {user.username ? <Feedprofile username={username} /> : ""}
+            {user.username ? <Rightbar user={user} /> : ""}
           </div>
         </div>
       </div>

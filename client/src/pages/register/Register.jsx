@@ -78,11 +78,13 @@ export default function Register() {
 
             <div className="orDivider">OR</div>
           </form>
-          <a href="http://localhost:3000/login/">
-            <button className="loginRegisterButton">
-              Log Into An Existing Account
-            </button>
-          </a>
+          <div className="loginRegisterButton">
+            <a href="http://localhost:3000/login/">
+              <button className="loginRegisterButton">
+                Log Into An Existing Account
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

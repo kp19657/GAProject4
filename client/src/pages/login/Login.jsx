@@ -47,9 +47,13 @@ export default function Login() {
             </button>
             <div className="orDivider">OR</div>
           </form>
-          <a href="http://localhost:3000/register/">
-            <button className="loginRegisterButton">Create New Account</button>
-          </a>
+          <div className="loginRegisterButton">
+            <a href="http://localhost:3000/register/">
+              <button className="loginRegisterButton">
+                Create New Account
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

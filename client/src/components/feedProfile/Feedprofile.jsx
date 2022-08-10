@@ -1,4 +1,4 @@
-import "./feed.css";
+import "./feedprofile.css";
 import Share from "../share/Share";
 import Post from "../post/Post";
 import { useState, useEffect } from "react";
@@ -15,8 +15,9 @@ export default function Feed({ username }) {
     const fetchPosts = async () => {
       const res =
         // username
-        //   ? await axios.get("http://localhost:5001/api/posts/profile/" + username) :
-        await axios.get("http://localhost:5001/api/posts/timeline/" + user._id);
+        //   ?
+        await axios.get("http://localhost:5001/api/posts/profile/" + username);
+      // :await axios.get("http://localhost:5001/api/posts/timeline/" + user._id);
       setPosts(
         res.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);

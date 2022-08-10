@@ -1,9 +1,5 @@
 import axios from "axios";
 
-export const logoutCall = async (dispatch) => {
-  dispatch({ type: "LOGOUT" });
-};
-
 export const loginCall = async (userCredentials, dispatch) => {
   dispatch({ type: "LOGIN_START" });
   try {
@@ -15,4 +11,8 @@ export const loginCall = async (userCredentials, dispatch) => {
   } catch (err) {
     dispatch({ type: "LOGIN_FALIURE", payload: err });
   }
+};
+
+export const logoutCall = async (dispatch) => {
+  dispatch({ type: "LOGOUT" });
 };
