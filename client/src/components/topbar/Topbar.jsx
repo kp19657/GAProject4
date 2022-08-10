@@ -10,11 +10,11 @@ import { logoutCall } from "../../apiCalls";
 
 export default function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
-  
+
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const handleClick = () => {
     logoutCall(dispatch);
-    console.log("logout clicked");
+    console.log("logout buton clicked");
   };
 
   return (
@@ -49,7 +49,10 @@ export default function Topbar() {
             <NotificationsIcon />
           </div>
         </div>
-        <Link to={`/profile/${user.username}`}>
+        <Link
+          to={`/profile/${user.username}`}
+          style={{ textDecoration: "none" }}
+        >
           <div className="profileBlock">
             <img
               src={
@@ -63,8 +66,8 @@ export default function Topbar() {
             {user.username}
           </div>
         </Link>
-        <span className="topbarLink" onClick={handleClick}>
-          Sign out
+        <span className="topbarLogout" onClick={handleClick}>
+          Sign Out
         </span>
       </div>
     </div>

@@ -28,9 +28,9 @@ export default function Feed({ username }) {
 
   return (
     <div className="feed">
-      <h2>{user.username}</h2>
+      {/* <h2>{user.username}</h2>
       <h2>{user.email}</h2>
-      <h2>{user._id}</h2>
+      <h2>{user._id}</h2> */}
       <div className="feedWrapper">
         {(!username || username === user.username) && <Share />}
         {/* <Share /> */}

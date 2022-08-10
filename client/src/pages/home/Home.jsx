@@ -15,7 +15,7 @@ export default function Home() {
       <div className="homeContainer">
         <Sidebar />
         <Feed username={user.username} />
-        <Rightbar user={user} />
+        <Rightbar user={user} /> 
       </div>
     </>
   );

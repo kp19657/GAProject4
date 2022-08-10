@@ -24,7 +24,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// LOGIN
+// PREVIOUS LOGIN
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({
@@ -37,9 +37,11 @@ router.post("/login", async (req, res) => {
       user.password
     );
 
-    !validPassword && res.status(400).json("wrong pw!");
-
-    res.status(200).json(user);
+    if (validPassword) {
+      res.status(200).json(user);
+    } else {
+      res.status(400).json("wrong pw!");
+    }
   } catch (err) {
     res.status(500).json(err);
   }
