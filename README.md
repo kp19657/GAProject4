@@ -12,16 +12,27 @@ The stack used in this project is the MERN stack, which stands for Mongo, Expres
 
 ## App Screenshots
 
+Registration Page:
 ![Registration Page](https://i.ibb.co/smfDkMp/pj4-screenie-register.jpg) <br />
-Registration Page
- <br /> <br />
 
+<br /> <br />
+
+Login Page:
 ![Login Page](https://i.ibb.co/jVX7QBT/pj4-screenie-login.jpg) <br />
-  Login Page
-   <br /> <br />
-   
-![User Homepage After Logging In](https://i.ibb.co/crtQpsp/pj4-screenie1.jpg) <br />
-  User Homepage After Logging In 
-   <br /> <br />
 
+<br /> <br />
+   
+User Homepage After Logging In :
+![User Homepage After Logging In](https://i.ibb.co/crtQpsp/pj4-screenie1.jpg) <br />
+
+<br /> <br />
+
+
+## Programming Languages
+
+The stack used in this project is the MERN stack, which stands for MongoDB, Express, React.js, and Node.js stack.
+
+## Known Limitations of The App
+
+The user is not able to run a search query yet. This feature will be added in a future version of the app.
  
