@@ -52,7 +52,7 @@ export default function Rightbar({ user }) {
         console.log(err);
       }
     };
-    getFriends();
+    getFollowers();
     // console.log(friends);
   }, [user]);
 
