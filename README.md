@@ -9,3 +9,8 @@ Users can register and login at the start of their journey.
 After that a user can create, query, edit, or delete their posts. (the entire CRUD sequence)
 Their posts can either be pure text descriptions of their magic moments or text descriptions with photos.
 The stack used in this project is the MERN stack, which stands for Mongo, Express, React.js, and Node.js stack.
+
+## App Screenshots
+
+![User Homepage After Logging In](https://i.ibb.co/crtQpsp/pj4-screenie1.jpg)
+User Homepage After Logging In 
