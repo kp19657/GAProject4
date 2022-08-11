@@ -14,12 +14,14 @@ The stack used in this project is the MERN stack, which stands for Mongo, Expres
 
 ![Registration Page](https://i.ibb.co/smfDkMp/pj4-screenie-register.jpg) <br />
 Registration Page
+ <br /> <br />
 
 ![Login Page](https://i.ibb.co/jVX7QBT/pj4-screenie-login.jpg) <br />
   Login Page
-  
+   <br /> <br />
+   
 ![User Homepage After Logging In](https://i.ibb.co/crtQpsp/pj4-screenie1.jpg) <br />
   User Homepage After Logging In 
-  
+   <br /> <br />
 
  
