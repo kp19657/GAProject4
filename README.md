@@ -3,12 +3,12 @@ Magic Moments Social App
 
 ## Project Description
 
-Magic Moments are moments in our lives that we cherish and remember.
-The Magic Social App is an app that allows you to upload and share your magical moments with other users on the app.
-Users can register and login at the start of their journey.
-After that a user can create, query, edit, or delete their posts. (the entire CRUD sequence)
-Their posts can either be pure text descriptions of their magic moments or text descriptions with photos.
-The stack used in this project is the MERN stack, which stands for Mongo, Express, React.js, and Node.js stack.
+Magic Moments are moments in our lives that we cherish and remember.<br/>
+The Magic Social App is an app that allows you to upload and share your magical moments with other users on the app.<br/>
+Users can register and login at the start of their journey.<br/>
+After that a user can create, query, edit, or delete their posts. (the entire CRUD sequence)<br/>
+Their posts can either be pure text descriptions of their magic moments or text descriptions with photos.<br/>
+The stack used in this project is the MERN stack, which stands for Mongo, Express, React.js, and Node.js stack.<br/>
 
 ## App Screenshots
 
@@ -45,5 +45,5 @@ The stack used in this project is the MERN stack, which stands for MongoDB, Expr
 
 ## Known Limitations of The App
 
-The user is not able to run a search query yet. This feature will be added in a future version of the app.
+The user is not able to run a search query yet. This feature will be added in a future version of the app. Also, the images files are currently hosted on the local drive of the server. In the future, these files can be hosted on an Amazon S3 cloud server instead for faster and more reliable loading.
  
