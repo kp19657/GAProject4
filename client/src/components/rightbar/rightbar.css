@@ -25,6 +25,7 @@
 }
 
 .rightbarTitle {
+  margin-top: 50px;
   margin-bottom: 10px;
 }
 
@@ -32,6 +33,8 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  text-transform: capitalize;
+  text-decoration: none;
 }
 
 .rightbarFriend {

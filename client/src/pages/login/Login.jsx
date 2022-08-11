@@ -42,6 +42,11 @@ export default function Login() {
               className="loginInput"
               ref={password}
             />
+
+            {error &&
+              error.message.map((err) => (
+                <p className="text-red-600">{err.msg}</p>
+              ))}
             <button className="loginButton" type="submit" disabled={isFetching}>
               {isFetching ? "Loading" : "Log In"}
             </button>

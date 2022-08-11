@@ -13,16 +13,31 @@ router.post("/create", async (req, res) => {
   }
 });
 
-// update a post
+// update a post by postid
+// router.put("/update/:id", async (req, res) => {
+//   try {
+//     const post = await Post.findById(req.params.id);
+//     if (post.userId === req.body.userId) {
+//       await post.updateOne({ $set: req.body });
+//       res.status(200).json("tis post has been updated");
+//     } else {
+//       res.status(403).json("u can only update ur own post");
+//     }
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// update post without validation
 router.put("/update/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-    if (post.userId === req.body.userId) {
-      await post.updateOne({ $set: req.body });
-      res.status(200).json("tis post has been updated");
-    } else {
-      res.status(403).json("u can only update ur own post");
-    }
+    // if (post.userId === req.body.userId) {
+    await post.updateOne({ $set: req.body });
+    res.status(200).json("tis post has been updated");
+    // } else {
+    //   res.status(403).json("u can only update ur own post");
+    // }
   } catch (err) {
     res.status(500).json(err);
   }

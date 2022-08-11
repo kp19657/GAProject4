@@ -78,5 +78,29 @@
 }
 
 .deletePost {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.editPost {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.submitChangeInput {
+  height: 250px;
+  width: 500px;
+}
+
+.submitChangeButton {
+  border: none;
+  background-color: #430064;
+  color: white;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
   cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import "./post.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ export default function Post({ post }) {
   const [isLiked, setIsLiked] = useState(false);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser } = useContext(AuthContext);
+  const [isEditing, setIsEditing] = useState(false);
+  const editRef = useRef();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -63,6 +65,27 @@ export default function Post({ post }) {
     window.location.reload();
   };
 
+  const openEditHandler = () => {
+    console.log("edit clicked");
+    setIsEditing(isEditing ? false : true);
+  };
+
+  const submitChange = async () => {
+    console.log("change submited");
+    const editedPost = { desc: editRef.current.value };
+    try {
+      await axios.put(
+        "http://localhost:5001/api/posts/update/" + post._id,
+        editedPost
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    console.log(editedPost);
+    setIsEditing(isEditing ? false : true);
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="post">
@@ -89,13 +112,27 @@ export default function Post({ post }) {
                 <span className="postUsername">{user.username}</span>
               </Link>
               <span className="postDate">posted {format(post.createdAt)}</span>
+              <h4>{post._id}</h4>
             </div>
             <div className="postTopRight">
               <MoreVertIcon />
             </div>
           </div>
           <div className="postCenter">
-            <span className="postText">{post?.desc}</span>
+            {isEditing ? (
+              <div>
+                <input
+                  className="submitChangeInput"
+                  defaultValue={post?.desc}
+                  ref={editRef}
+                />
+                <button className="submitChangeButton" onClick={submitChange}>
+                  Submit Change
+                </button>
+              </div>
+            ) : (
+              <span className="postText">{post?.desc}</span>
+            )}
             <img className="postImg" src={PF + post.img} alt="" />
           </div>
           <div className="postBottom"></div>
@@ -125,6 +162,13 @@ export default function Post({ post }) {
               </span>
               <span className="postCommentText"> 9 comments</span>
             </div> */}
+            {currentUser._id === post.userId ? (
+              <span className="editPost" onClick={openEditHandler}>
+                EDIT
+              </span>
+            ) : (
+              <span></span>
+            )}
             {currentUser._id === post.userId ? (
               <span className="deletePost" onClick={deleteHandler}>
                 DELETE
