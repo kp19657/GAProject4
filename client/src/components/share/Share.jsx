@@ -1,7 +1,6 @@
 import "./share.css";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import LabelIcon from "@mui/icons-material/Label";
-import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";

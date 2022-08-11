@@ -1,16 +1,12 @@
 import "./rightbar.css";
 import axios from "axios";
-import Online from "../online/Online";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-import AddIcon from "@mui/icons-material/Add";
 
 export default function Rightbar({ user }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
   const [followers, setFollowers] = useState([]);
-  const { user: currentUser } = useContext(AuthContext);
 
   //get all profiles that the logged in user is following
   useEffect(() => {
@@ -22,9 +18,9 @@ export default function Rightbar({ user }) {
           "http://localhost:5001/api/users/friends/" + user._id
         );
         console.log("friendList", friendList);
-        friendList.data.map((friend) => {
-          console.log(friend);
-        });
+        // friendList.data.map((friend) => {
+        //   console.log(friend);
+        // });
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);
@@ -44,9 +40,9 @@ export default function Rightbar({ user }) {
           "http://localhost:5001/api/users/followers/" + user._id
         );
         console.log("followersList", followersList);
-        followersList.data.map((follower) => {
-          console.log(follower);
-        });
+        // followersList.data.map((follower) => {
+        //   console.log(follower);
+        // });
         setFollowers(followersList.data);
       } catch (err) {
         console.log(err);

@@ -62,20 +62,17 @@ router.get("/pfl/:id", async (req, res) => {
   }
 });
 
-// get a user
-// router.get("/", async (req, res) => {
-//   const userId = req.query.userId;
-//   const username = req.query.username;
-//   try {
-//     const user = userId
-//       ? await User.findById(req.params.id)
-//       : await User.findOne({ username: username });
-//     const { password, updatedAt, ...other } = user._doc;
-//     res.status(200).json(user);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// get all registered users
+router.get("/allprofiles", async (req, res) => {
+  try {
+    const allProfiles = await User.find({});
+    console.log(allProfiles);
+    res.status(200).json(allProfiles);
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
 
 // get all friends that the user is following
 router.get("/friends/:userId", async (req, res) => {
