@@ -12,20 +12,23 @@ The stack used in this project is the MERN stack, which stands for Mongo, Expres
 
 ## App Screenshots
 
-Above: Registration Page
 ![Registration Page](https://i.ibb.co/smfDkMp/pj4-screenie-register.jpg) <br />
 
 <br /> <br />
 
-Above: Login Page
+Above: Registration Page
+
+
 ![Login Page](https://i.ibb.co/jVX7QBT/pj4-screenie-login.jpg) <br />
 
 <br /> <br />
+Above: Login Page
    
-Above: User Homepage After Logging In 
+
 ![User Homepage After Logging In](https://i.ibb.co/crtQpsp/pj4-screenie1.jpg) <br />
 
 <br /> <br />
+Above: User Homepage After Logging In 
 
 
 ## Programming Languages
