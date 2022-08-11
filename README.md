@@ -1,5 +1,5 @@
-# GAProject4
-Magic Moments Social App
+# Magic Moments Social App
+
 
 ## Project Description
 
