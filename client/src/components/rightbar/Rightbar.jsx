@@ -69,9 +69,9 @@ export default function Rightbar({ user }) {
           </div>
           <h4 className="rightbarTitle">Your Followers:</h4>
           <ul className="rightbarFriendList">
-            {friends.map((friend) => (
+            {followers.map((follower) => (
               <Link
-                to={"/profile/" + friend.username}
+                to={"/profile/" + follower.username}
                 style={{ textDecoration: "none" }}
               >
                 <li className="rightbarFriend">
@@ -79,14 +79,14 @@ export default function Rightbar({ user }) {
                     <img
                       className="rightbarProfileImg"
                       src={
-                        friend.profilePicture
-                          ? PF + `person/${friend.profilePicture}`
+                        follower.profilePicture
+                          ? PF + `person/${follower.profilePicture}`
                           : PF + "person/noAvatar.png"
                       }
                       alt=""
                     />
                   </div>
-                  <span className="rightbarUsername">{friend.username}</span>
+                  <span className="rightbarUsername">{follower.username}</span>
                 </li>
               </Link>
             ))}
