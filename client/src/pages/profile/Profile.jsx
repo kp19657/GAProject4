@@ -16,8 +16,10 @@ export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({});
   const username = useParams().username;
-  const { user: currentUser } = useContext(AuthContext);
-  const [followed, setFollowed] = useState(false);
+  const { user: currentUser, dispatch } = useContext(AuthContext);
+  const [followed, setFollowed] = useState(
+    currentUser.following.includes(user?._id)
+  );
 
   useEffect(() => {
     setFollowed(currentUser.following.includes(user?._id));
@@ -42,10 +44,12 @@ export default function Profile() {
             userId: currentUser._id,
           }
         );
+        dispatch({ type: "UNFOLLOW", payload: user._id });
       } else {
         await axios.put(`http://localhost:5001/api/users/${user._id}/follow`, {
           userId: currentUser._id,
         });
+        dispatch({ type: "FOLLOW", payload: user._id });
       }
     } catch (err) {
       console.log(err);

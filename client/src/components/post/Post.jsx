@@ -66,12 +66,10 @@ export default function Post({ post }) {
   };
 
   const openEditHandler = () => {
-    console.log("edit clicked");
     setIsEditing(isEditing ? false : true);
   };
 
   const submitChange = async () => {
-    console.log("change submited");
     const editedPost = { desc: editRef.current.value };
     try {
       await axios.put(
@@ -81,7 +79,6 @@ export default function Post({ post }) {
     } catch (err) {
       console.log(err);
     }
-    console.log(editedPost);
     setIsEditing(isEditing ? false : true);
     window.location.reload();
   };
@@ -112,7 +109,6 @@ export default function Post({ post }) {
                 <span className="postUsername">{user.username}</span>
               </Link>
               <span className="postDate">posted {format(post.createdAt)}</span>
-              <h4>{post._id}</h4>
             </div>
             <div className="postTopRight">
               <MoreVertIcon />

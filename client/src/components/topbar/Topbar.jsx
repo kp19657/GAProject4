@@ -14,7 +14,6 @@ export default function Topbar() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const handleClick = () => {
     logoutCall(dispatch);
-    console.log("logout buton clicked");
   };
 
   return (

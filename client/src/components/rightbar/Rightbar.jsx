@@ -12,12 +12,9 @@ export default function Rightbar({ user }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        console.log("tis user is " + user._id);
-
         const friendList = await axios.get(
           "http://localhost:5001/api/users/friends/" + user._id
         );
-        console.log("friendList", friendList);
         // friendList.data.map((friend) => {
         //   console.log(friend);
         // });
@@ -27,7 +24,6 @@ export default function Rightbar({ user }) {
       }
     };
     getFriends();
-    // console.log(friends);
   }, [user]);
 
   //get all followers of the logged in user
@@ -39,7 +35,6 @@ export default function Rightbar({ user }) {
         const followersList = await axios.get(
           "http://localhost:5001/api/users/followers/" + user._id
         );
-        console.log("followersList", followersList);
         // followersList.data.map((follower) => {
         //   console.log(follower);
         // });
@@ -49,7 +44,6 @@ export default function Rightbar({ user }) {
       }
     };
     getFollowers();
-    // console.log(friends);
   }, [user]);
 
   return (
@@ -63,7 +57,7 @@ export default function Rightbar({ user }) {
               today
             </span>
           </div>
-          <h4 className="rightbarTitle">Your Followers:</h4>
+          <h4 className="rightbarTitle">Followers:</h4>
           <ul className="rightbarFriendList">
             {followers.map((follower) => (
               <Link
@@ -88,7 +82,7 @@ export default function Rightbar({ user }) {
             ))}
           </ul>
 
-          <h4 className="rightbarTitle">You Are Following:</h4>
+          <h4 className="rightbarTitle">Is Following:</h4>
           <ul className="rightbarFriendList">
             {friends.map((friend) => (
               <Link

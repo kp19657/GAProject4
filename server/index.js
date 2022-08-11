@@ -25,6 +25,10 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(cors());
 
+helmet({
+  crossOriginResourcePolicy: false,
+});
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
