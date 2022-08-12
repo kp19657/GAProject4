@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+  const { user, isFetching, dispatch } = useContext(AuthContext);
   const handleClick = (e) => {
     e.preventDefault();
     loginCall(
@@ -15,7 +15,6 @@ export default function Login() {
     );
   };
 
-  // console.log(user);
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -43,10 +42,10 @@ export default function Login() {
               ref={password}
             />
 
-            {error &&
+            {/* {error &&
               error.message.map((err) => (
                 <p className="text-red-600">{err.msg}</p>
-              ))}
+              ))} */}
             <button className="loginButton" type="submit" disabled={isFetching}>
               {isFetching ? "Loading" : "Log In"}
             </button>

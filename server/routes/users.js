@@ -82,7 +82,6 @@ router.get("/friends/:userId", async (req, res) => {
         return User.findById(friendId);
       })
     );
-    console.log(friends);
     let friendList = [];
     friends.map((friend) => {
       const { _id, username, email, profilePicture } = friend;
@@ -124,7 +123,7 @@ router.put("/:id/follow", async (req, res) => {
       const currentUser = await User.findById(req.body.userId);
       if (!user.followers.includes(req.body.userId)) {
         await user.updateOne({ $push: { followers: req.body.userId } });
-        await currentUser.updateOne({ $push: { followings: req.params.id } });
+        await currentUser.updateOne({ $push: { following: req.params.id } });
         res.status(200).json("user has been followed");
       } else {
         res.status(403).json("you allready follow this user");
@@ -145,7 +144,7 @@ router.put("/:id/unfollow", async (req, res) => {
       const currentUser = await User.findById(req.body.userId);
       if (user.followers.includes(req.body.userId)) {
         await user.updateOne({ $pull: { followers: req.body.userId } });
-        await currentUser.updateOne({ $pull: { followings: req.params.id } });
+        await currentUser.updateOne({ $pull: { following: req.params.id } });
         res.status(200).json("user has been unfollowed");
       } else {
         res.status(403).json("you dont follow this user");

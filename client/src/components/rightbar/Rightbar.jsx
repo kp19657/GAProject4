@@ -15,9 +15,7 @@ export default function Rightbar({ user }) {
         const friendList = await axios.get(
           "http://localhost:5001/api/users/friends/" + user._id
         );
-        // friendList.data.map((friend) => {
-        //   console.log(friend);
-        // });
+
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);
@@ -35,9 +33,7 @@ export default function Rightbar({ user }) {
         const followersList = await axios.get(
           "http://localhost:5001/api/users/followers/" + user._id
         );
-        // followersList.data.map((follower) => {
-        //   console.log(follower);
-        // });
+
         setFollowers(followersList.data);
       } catch (err) {
         console.log(err);

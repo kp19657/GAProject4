@@ -1,5 +1,4 @@
 import "./sidebar.css";
-import GroupIcon from "@mui/icons-material/Group";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import Event from "@mui/icons-material/Event";
 import { Link } from "react-router-dom";
@@ -30,10 +29,6 @@ export default function Sidebar({ user }) {
     <div className="sidebar">
       <div className="sidebarWrapper">
         <ul className="sidebarList">
-          <li className="sidebarListItem">
-            <GroupIcon className="sidebarIcon" />
-            <span className="sidebarListItemText">Groups</span>
-          </li>
           <li className="sidebarListItem">
             <BookmarkIcon className="sidebarIcon" />
             <span className="sidebarListItemText">Bookmarks</span>

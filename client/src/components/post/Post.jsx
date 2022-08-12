@@ -30,18 +30,6 @@ export default function Post({ post }) {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     // setting res to the user that wrote the post, identified by post.userId
-  //     const res = await axios.get(
-  //       `http://localhost:5001/api/users/userId=${post.userId}`
-  //     );
-  //     setUser(res.data);
-  //   };
-  //   fetchUser();
-  //   console.log(user);
-  // }, [post.userId]);
-
   const likeHandler = () => {
     try {
       axios.put("http://localhost:5001/api/posts/" + post._id + "/like", {
@@ -151,13 +139,6 @@ export default function Post({ post }) {
                 {like} people like this post
               </span>
             </div>
-            {/* contain comments */}
-            {/* <div className="postBottomRight">
-              <span className="deletePost" onClick={deleteHandler}>
-                DELETE
-              </span>
-              <span className="postCommentText"> 9 comments</span>
-            </div> */}
             {currentUser._id === post.userId ? (
               <span className="editPost" onClick={openEditHandler}>
                 EDIT

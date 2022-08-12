@@ -57,16 +57,6 @@ export default function Profile() {
     setFollowed(!followed);
   };
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const res = await axios.get(
-  //       `http://localhost:5001/api/users/${post.userId}`
-  //     );
-  //     setUser(res.data);
-  //   };
-  //   fetchUser();
-  // }, [post.userId]);
-
   return (
     <>
       <Topbar />
